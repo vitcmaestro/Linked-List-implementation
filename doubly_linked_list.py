@@ -39,8 +39,6 @@ class operations:
             x.left = temp
             trav.right = temp
             temp.left = trav
-        if(length == 1):
-            h.tail = temp
     def delAtBeg(self,length):
         temp = h.head
         h.head = temp.right
@@ -71,7 +69,6 @@ class operations:
             else:
                 h.tail = trav
             del temp
-            length -=1
     def search(self,pos,length):
         if(pos> length//2):
             trav = h.tail
@@ -84,7 +81,7 @@ class operations:
             c= 1
             trav = h.head
             while(c != pos):
-                trav = trav.next
+                trav = trav.right
             print(trav.data)
     def print(self):
         trav = h.head
