@@ -21,15 +21,8 @@ class operations:
             h.tail = temp
     def insAtEnd(self,d,length):
         temp = Node(d)
-        trav = h.head
-        if(h.head == None):
-            insAtBeg(self,d,length)
-        else:
-            while(trav.right != None):
-                trav = trav.right
-            trav.right = temp
-            temp.left = trav
-            h.tail = temp
+        h.tail.right = temp
+        h.tail = temp
         
     def insAtPos(self,pos,d,length):
         temp = Node(d)
@@ -57,13 +50,9 @@ class operations:
         if(length == 1):
             h.tail = temp
     def delAtEnd(self,length):
-        trav = h.head
-        while(trav.right.right != None):
-            trav = trav.right
-        temp = trav.right
-        trav.right = None
-        temp.left = None
-        h.tail = trav
+        temp = h.tail
+        h.tail = h.tail.left
+        tail.right = None
         del temp
     def delAtPos(self,pos,length):
         if(pos == 1):
